@@ -90,17 +90,16 @@
       return '' +
         '<div class="cart-item">' +
           '<img src="' + item.image + '" alt="' + item.name + '">' +
-          '<div>' +
+          '<div class="cart-item-main">' +
             '<h3>' + item.name + '</h3>' +
             '<small>' + item.family + ' · ' + item.spec + '</small>' +
             '<div class="qty">' +
               '<button type="button" data-act="minus" data-id="' + key + '" aria-label="Decrease quantity of ' + item.name + '">−</button>' +
               '<span>' + qty + '</span>' +
               '<button type="button" data-act="plus" data-id="' + key + '" aria-label="Increase quantity of ' + item.name + '">+</button>' +
-              '<button type="button" class="cart-remove" data-act="remove" data-id="' + key + '">Remove</button>' +
             '</div>' +
           '</div>' +
-          '<span class="product-number">' + String(index + 1).padStart(2, '0') + '</span>' +
+          '<button type="button" class="cart-remove" data-act="remove" data-id="' + key + '" aria-label="Remove ' + item.name + ' from brief">Remove</button>' +
         '</div>';
     }).join('');
   }
