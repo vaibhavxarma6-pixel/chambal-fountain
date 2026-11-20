@@ -1,1 +1,1 @@
-{ "rewrites": [ { "source": "/collection", "destination": "/collection.html" } ] } 
+{ "rewrites": [ { "source": "/collection", "destination": "/collection.html" }, { "source": "/contact", "destination": "/contact.html" }, { "source": "/journal", "destination": "/journal.html" }, { "source": "/projects", "destination": "/projects.html" }, { "source": "/story", "destination": "/story.html" }, { "source": "/studio", "destination": "/studio.html" }, { "source": "/index", "destination": "/index.html" } ] } 
