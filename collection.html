@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e9">
+  <title>Fountain Collection | Fontana Firenze</title>
+  <meta name="description" content="Explore the Fontana Firenze collection of classical, contemporary and wall-mounted fountains. Discover a design and customise it for your space.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .collection-page{padding:clamp(38px,6vw,76px) 0 30px}
+    .collection-intro{max-width:780px;margin-bottom:34px}
+    .collection-intro .eyebrow{margin-bottom:14px}
+    .collection-intro h1{font-size:clamp(42px,6.5vw,76px);line-height:1.02;letter-spacing:-.045em;margin:0 0 20px}
+    .collection-intro .sub{font-size:clamp(16px,1.5vw,19px);line-height:1.7;max-width:680px}
+    .collection-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .collection-meta span{font-size:14px;letter-spacing:.04em;color:var(--muted,#777)}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 28px}
+    .filters button{font:inherit;font-size:15px;padding:11px 20px;border:1px solid rgba(60,50,38,.22);background:transparent;color:inherit;border-radius:999px;cursor:pointer;transition:.2s ease}
+    .filters button:hover,.filters button.on{background:#25251f;color:#fff;border-color:#25251f}
+    .collection-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+    .collection-count{font-size:14px;color:var(--muted,#777)}
+    .collection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+    .collection-card{min-width:0;background:#fff;border:1px solid rgba(50,43,32,.10);overflow:hidden}
+    .collection-card .product-image{aspect-ratio:4/4.2;overflow:hidden;background:#e9e4da}
+    .collection-card .product-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+    .collection-card:hover .product-image img{transform:scale(1.045)}
+    .collection-card .product-info{padding:22px 23px 24px}
+    .product-topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+    .product-family{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8a7558}
+    .product-number{font-size:12px;color:#999}
+    .collection-card h2{font-size:clamp(23px,2vw,29px);line-height:1.15;margin:0 0 9px}
+    .collection-card .product-spec{font-size:15px;line-height:1.6;color:#716d65;margin:0 0 20px}
+    .product-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .quote-label{font-size:14px;font-weight:600;letter-spacing:.02em}
+    .collection-card .btn{font-size:14px;padding:11px 17px;white-space:nowrap}
+    .collection-note{font-size:14px;line-height:1.65;color:#777;margin:22px 0 0}
+    .collection-empty{grid-column:1/-1;padding:40px 20px;text-align:center;background:#fff;border:1px solid rgba(50,43,32,.1);font-size:16px}
+    .collection-feature{padding:58px 0}
+    .collection-feature .cta{padding:clamp(30px,5vw,58px);text-align:center}
+    /* Refined, spacious footer */
+    footer{background:#20211d;color:#f4f0e8;padding:58px 0 24px;margin-top:12px}
+    footer .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;padding-bottom:42px;border-bottom:1px solid rgba(244,240,232,.18)}
+    footer .logo{display:inline-block;color:#f4f0e8;font-size:27px;letter-spacing:.12em;text-decoration:none}
+    footer .logo small{display:block;color:#c2ad8e;font-size:10px;letter-spacing:.2em;margin-top:7px}
+    footer .foot>div:first-child:after{content:"Sculptural water features for considered spaces.";display:block;max-width:280px;color:#c8c3b8;font-size:15px;line-height:1.75;margin-top:22px}
+    footer .foot strong{display:block;color:#c2ad8e;font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:4px 0 18px}
+    footer .foot a:not(.logo){display:block;width:fit-content;color:#e5e0d6;text-decoration:none;font-size:15px;line-height:1.5;margin:0 0 12px;transition:color .2s ease}
+    footer .foot a:not(.logo):hover{color:#c2ad8e}
+    footer .small{color:#aaa69c;font-size:13px;line-height:1.6;padding-top:20px;margin:0}
+    @media(max-width:700px){footer{padding:42px 0 20px}footer .foot{grid-template-columns:1fr 1fr;gap:30px 22px;padding-bottom:30px}footer .foot>div:first-child{grid-column:1/-1}footer .foot>div:first-child:after{max-width:340px;margin-top:14px}}
+    @media(max-width:420px){footer .foot{grid-template-columns:1fr 1fr;gap:26px 14px}footer .foot a:not(.logo){font-size:14px}}
+    .collection-feature .cta p{max-width:650px;margin:12px auto 24px;font-size:16px;line-height:1.7}
+    @media(max-width:900px){.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
+    @media(max-width:600px){.collection-grid{grid-template-columns:1fr;gap:18px}.collection-card .product-image{aspect-ratio:4/3.5}.collection-card .product-info{padding:19px}.filters{gap:8px}.filters button{padding:10px 16px;font-size:14px}.collection-toolbar{align-items:flex-start}.collection-feature{padding:38px 0}}
+  </style>
+<style>
+footer{background:#211f1a!important;color:#f6f1e8!important;padding:58px 0 24px!important;border:0!important}
+footer .foot{border:0!important;border-bottom:0!important;padding-bottom:0!important;display:block!important}
+footer .logo{color:#fff!important}footer .logo small{color:#d5b58e!important}footer .foot strong{color:#d5b58e!important}footer .foot a:not(.logo){color:#e4ded3!important;font-size:14px!important;margin:8px 0!important}footer .foot>div:first-child:after{display:none!important}footer .small{color:#bdb5a8!important;border-top:1px solid rgba(255,255,255,.17);padding-top:20px!important}
+</style></head>
+<body>
+
+<header><div class="wrap nav"><a class="logo" href="index.html" aria-label="Fontana Firenze home">CHAMBAL <br>FOUNTAIN <small>FIRENZE · WATER &amp; STONE</small></a><button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation">☰</button><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="collection.html" class="active" aria-current="page">Collection</a><a href="studio.html">Custom Studio</a><a href="projects.html">Projects</a><a href="story.html">Our Story</a><a href="journal.html">Journal</a><a href="contact.html">Contact</a></nav><a class="btn nav-cta" href="contact.html">Enquire Now <span aria-hidden="true">↗</span></a></div></header>
+
+  <main>
+    <section class="wrap collection-page">
+      <div class="collection-intro">
+        <p class="eyebrow">The Fontana Firenze Collection</p>
+        <h1>Water, shaped<br>into timeless form.</h1>
+        <p class="sub">Explore a considered range of sculptural fountains, from traditional tiered forms to clean contemporary water features and elegant wall pieces. Choose a design as your starting point, then make it yours in the Custom Studio.</p>
+        <div class="collection-meta">
+          <span>01 — Classica</span>
+          <span>·</span>
+          <span>02 — Moderna</span>
+          <span>·</span>
+          <span>03 — Parete</span>
+        </div>
+      </div>
+
+      <div class="filters" id="filters" aria-label="Filter collection">
+        <button class="on" type="button" data-f="all" aria-pressed="true">All designs <span>(09)</span></button>
+        <button type="button" data-f="classica" aria-pressed="false">Classica</button>
+        <button type="button" data-f="moderna" aria-pressed="false">Moderna</button>
+        <button type="button" data-f="parete" aria-pressed="false">Parete</button>
+      </div>
+
+      <div class="collection-toolbar">
+        <p class="eyebrow">Designed for distinctive spaces</p>
+        <span class="collection-count" id="collection-count" aria-live="polite">Showing 9 designs</span>
+      </div>
+
+      <div class="collection-grid" id="grid">
+        <article class="collection-empty">Loading collection…</article>
+      </div>
+      <p class="collection-note">Each fountain can be discussed for your project’s dimensions, finish and site requirements. Pricing, delivery and installation details are shared after understanding your brief.</p>
+    </section>
+
+    <section class="collection-feature">
+      <div class="wrap">
+        <div class="cta">
+          <p class="eyebrow">Made to fit your space</p>
+          <h2>Have a vision in mind?</h2>
+          <p>From a compact courtyard feature to a statement fountain for a hotel or estate, begin with a signature design and explore a tailored configuration.</p>
+          <a class="btn" href="studio.html">Explore the Custom Studio →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><div class="footer-main"><div class="footer-brand"><a class="logo" href="index.html">FONTANA<small>FIRENZE · WATER &amp; STONE</small></a><p>Thoughtfully designed fountains and water features for homes, hospitality and landscape spaces across India.</p></div><div class="foot"><strong>Explore</strong><a href="collection.html">Collection</a><a href="studio.html">Custom Studio</a><a href="projects.html">Projects &amp; Inspiration</a><a href="journal.html">Journal</a></div><div class="foot"><strong>Company</strong><a href="story.html">Our Story</a><a href="contact.html">Contact</a><a href="contact.html">Request a Quote</a></div><div class="foot footer-contact"><strong>Get in touch</strong><a href="https://wa.me/919829029406" target="_blank" rel="noopener">WhatsApp: +91 98290 29406</a><a href="mailto:chambalfountain@gmail.com">chambalfountain@gmail.com</a><p>GSTIN: 08BLXPK8241A2ZU</p></div></div><div class="footer-bottom"><span>© <span class="year">2026</span> Fontana Firenze. All rights reserved.</span><span>25 years of experience · India</span></div></div></footer>
+
+  <script>
+    const PRODUCTS = [
+      { name: 'Classica Tre', family: 'classica', spec: 'Three-tier centrepiece · Approx. H 210 cm · Carrara-inspired finish', image: 'assets/images/collection-classica.jpg', alt: 'Classical three-tier stone fountain' },
+      { name: 'Classica Uno', family: 'classica', spec: 'Single-tier fountain · Approx. H 140 cm · Travertine-inspired finish', image: 'assets/images/fountain-detail.jpg', alt: 'Elegant single-tier classical fountain' },
+      { name: 'Classica Quattro', family: 'classica', spec: 'Four-tier statement fountain · Approx. H 340 cm · Light stone finish', image: 'assets/images/hero-fountain.jpg', alt: 'Grand multi-tier classical fountain' },
+      { name: 'Moderna Piano', family: 'moderna', spec: 'Minimal reflecting plane · Approx. L 180 cm · Contemporary profile', image: 'assets/images/collection-moderna.jpg', alt: 'Modern reflecting water feature' },
+      { name: 'Moderna Lama', family: 'moderna', spec: 'Architectural water blade · Approx. W 120 cm · Dark stone finish', image: 'assets/images/project-villa.jpg', alt: 'Contemporary water blade fountain' },
+      { name: 'Moderna Cubo', family: 'moderna', spec: 'Geometric cube basin · Approx. 90 × 90 cm · Minimal design', image: 'assets/images/project-hotel.jpg', alt: 'Geometric cube fountain in a landscape' },
+      { name: 'Parete Sole', family: 'parete', spec: 'Wall-mounted spout · Approx. H 90 cm · Compact statement piece', image: 'assets/images/collection-parete.jpg', alt: 'Decorative wall-mounted fountain' },
+      { name: 'Parete Luna', family: 'parete', spec: 'Arched wall niche · Approx. H 130 cm · Sculptural silhouette', image: 'assets/images/florence.jpg', alt: 'Arched niche wall fountain' },
+      { name: 'Parete Fonte', family: 'parete', spec: 'Classic lion-head spout · Approx. H 110 cm · Heritage character', image: 'assets/images/project-palace.jpg', alt: 'Traditional lion-head wall fountain' }
+    ];
+
+    const grid = document.getElementById('grid');
+    const count = document.getElementById('collection-count');
+    const filters = document.getElementById('filters');
+
+    function renderCollection(family = 'all') {
+      const items = PRODUCTS.filter(item => family === 'all' || item.family === family);
+      count.textContent = `Showing ${items.length} ${items.length === 1 ? 'design' : 'designs'}`;
+
+      if (!items.length) {
+        grid.innerHTML = '<p class="collection-empty">No designs found in this family.</p>';
+        return;
+      }
+
+      grid.innerHTML = items.map((item, index) => `
+        <article class="collection-card">
+          <div class="product-image">
+            <img src="${item.image}" alt="${item.alt}" loading="${index > 2 ? 'lazy' : 'eager'}">
+          </div>
+          <div class="product-info">
+            <div class="product-topline">
+              <span class="product-family">${item.family}</span>
+              <span class="product-number">0${PRODUCTS.indexOf(item) + 1} / 09</span>
+            </div>
+            <h2>${item.name}</h2>
+            <p class="product-spec">${item.spec}</p>
+            <div class="product-actions">
+              <span class="quote-label">Price on request</span>
+              <a class="btn" href="studio.html?model=${encodeURIComponent(item.name)}">Customise ↗</a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    filters.addEventListener('click', event => {
+      const button = event.target.closest('button[data-f]');
+      if (!button) return;
+
+      filters.querySelectorAll('button').forEach(item => {
+        const active = item === button;
+        item.classList.toggle('on', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+
+      renderCollection(button.dataset.f);
+    });
+
+    renderCollection();
+  </script>
+  <script id="fontana-menu-init">document.addEventListener("DOMContentLoaded",()=>{const b=document.querySelector(".menu-toggle"),n=document.querySelector(".nav nav");if(b&&n)b.addEventListener("click",()=>{const o=n.classList.toggle("is-open");b.setAttribute("aria-expanded",String(o));b.setAttribute("aria-label",o?"Close navigation":"Open navigation");b.textContent=o?"✕":"☰";});document.querySelectorAll(".year").forEach(x=>x.textContent=new Date().getFullYear());});</script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
