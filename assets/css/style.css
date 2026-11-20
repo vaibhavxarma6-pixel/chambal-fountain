@@ -1163,3 +1163,26 @@ main>section:not(.page-hero):not(.contact-layout):not(.studio-layout){scroll-mar
 @media(max-width:860px){.wrap{width:min(100% - 36px,700px)}.nav{min-height:76px;justify-content:space-between;flex-wrap:wrap;padding-block:10px}.menu-toggle{display:block;margin-left:auto}.nav nav{display:none;order:4;flex:0 0 100%;width:100%;margin:0;padding:12px 0 8px;flex-direction:column;align-items:stretch;gap:0;border-top:1px solid var(--line)}.nav nav.is-open{display:flex}.nav nav a{padding:10px 4px;font-size:14px}.nav nav a:after{display:none}.nav-cta{margin-left:0}.contact-layout,.studio-layout{grid-template-columns:1fr;gap:25px}.contact-aside,.studio-aside{position:static}.contact-aside{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}.contact-image{height:100%;min-height:300px}.studio-aside{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.studio-photo{height:100%;min-height:390px}.story-feature{gap:35px}.inspiration-grid{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.page-hero{padding-top:55px}.footer-main{grid-template-columns:1fr 1fr}.footer-contact{grid-column:auto}.trust-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.wrap{width:min(100% - 30px,480px)}.topbar{font-size:9px;line-height:1.5;letter-spacing:.07em}.logo{font-size:25px}.logo small{font-size:8px}.nav-cta{font-size:11px;min-height:40px}.page-hero{padding-top:42px;padding-bottom:32px}.page-hero h1{font-size:clamp(49px,13vw,68px)}.page-hero .sub{font-size:15px}.contact-layout,.studio-layout{padding-bottom:60px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-card .bd{padding:22px}.form-title{font-size:32px}.contact-aside,.studio-aside{display:block}.contact-image{height:230px;min-height:0}.studio-photo{height:250px;min-height:0}.contact-info,.studio-aside-copy{padding:24px 2px}.contact-info h2,.studio-aside-copy h2{font-size:36px}.check-options{grid-template-columns:1fr}.story-feature{grid-template-columns:1fr;padding-bottom:55px}.story-image{height:330px;border-radius:4px 100px 4px 4px}.story-copy h2{font-size:40px}.values-section{padding:58px 0}.values-grid{grid-template-columns:1fr}.inspiration-grid,.grid3{grid-template-columns:1fr;gap:17px}.inspiration-image{height:230px}.collection-page{padding-top:45px}.collection-grid{grid-template-columns:1fr}.collection-intro h1{font-size:clamp(45px,12vw,62px)}.collection-card .product-image{aspect-ratio:4/3.2}.footer-main{grid-template-columns:1fr 1fr;gap:25px 16px}.footer-brand{grid-column:1/-1}.footer-contact{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:7px;font-size:11px}.trust-grid>div{font-size:11px}.card .ph{height:240px}.cta{padding:46px 20px}.cta h2{font-size:38px}}
 .reveal-item{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}.reveal-item.is-visible{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){.reveal-item{opacity:1;transform:none;transition:none}}
+
+
+/* Chambal Fountain Mobile Navigation Enhancements */
+@media (max-width: 860px) {
+  header {
+    z-index: 999;
+  }
+  .nav nav.is-open {
+    background: #F6F1E8;
+    padding: 14px 12px 18px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 14px 30px rgba(33, 31, 26, 0.12);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  .nav nav a {
+    padding: 12px 6px;
+    border-bottom: 1px solid rgba(33, 31, 26, 0.08);
+  }
+  .nav nav a:last-child {
+    border-bottom: none;
+  }
+}
