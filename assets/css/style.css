@@ -1250,3 +1250,19 @@ main>section:not(.page-hero):not(.contact-layout):not(.studio-layout){scroll-mar
 .fallback-note{max-width:380px;font-size:13px;color:#ece6da;line-height:1.7}
 @media(max-width:960px){.config-grid{grid-template-columns:1fr}.fountain-canvas{height:clamp(360px,72vw,520px)}}
 @media(max-width:600px){.config-head h2{font-size:36px}.viewer-hint{font-size:10px;padding:6px 11px}.viewer-toolbar{justify-content:center}.nudge-label{width:100%;text-align:center}}
+
+/* FAQ sections (home + custom studio) */
+.faq-section{padding:clamp(56px,8vw,96px) 0;border-top:1px solid var(--line)}
+.faq-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,80px);align-items:start}
+.faq-head h2{font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-.04em;margin:12px 0 18px}
+.faq-head .sub{margin-bottom:22px}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;font-size:17px;font-weight:600;line-height:1.45;transition:color .2s ease}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover,.faq-item[open] summary{color:var(--bronze)}
+.faq-item summary:after{content:'+';flex:0 0 28px;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:18px;font-weight:400;color:var(--bronze);transition:.2s}
+.faq-item[open] summary:after{content:'\2212'}
+.faq-answer{padding:0 46px 22px 0;color:var(--muted);font-size:15px;line-height:1.75}
+.faq-answer p{margin:0}
+@media(max-width:800px){.faq-wrap{grid-template-columns:1fr}.faq-answer{padding-right:0}}
